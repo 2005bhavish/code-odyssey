@@ -74,9 +74,11 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
+            <a href="https://linktr.ee/CodeoholicsCommunity" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="w-full sm:w-auto">
               Register Now
             </Button>
+            </a>
             <Button size="lg" variant="outline" className="w-full sm:w-auto">
               Explore Events
             </Button>
@@ -89,19 +91,19 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-white">10+</div>
-              <div className="text-sm text-gray-400">Gaming Events</div>
+              <div className="text-3xl font-bold text-white">5</div>
+              <div className="text-sm text-gray-400">Exciting Events</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-white">24h</div>
+              <div className="text-3xl font-bold text-white">8h+</div>
               <div className="text-sm text-gray-400">Non-Stop Action</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-white">₹50K+</div>
+              <div className="text-3xl font-bold text-white">₹20K+</div>
               <div className="text-sm text-gray-400">Prize Pool</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-white">500+</div>
+              <div className="text-3xl font-bold text-white">200+</div>
               <div className="text-sm text-gray-400">Participants</div>
             </div>
           </motion.div>
