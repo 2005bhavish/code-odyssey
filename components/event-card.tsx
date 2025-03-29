@@ -1,7 +1,8 @@
-"use client"
-
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Gamepad2, Code, Bug, Shield, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 interface EventCardProps {
   title: string
@@ -11,9 +12,11 @@ interface EventCardProps {
   rounds?: string[]
   note?: string
   icon: "gamepad" | "code" | "bug" | "shield"
+  imageUrl: string
+  link?: string // Add the link prop
 }
 
-export function EventCard({ title, description, games, features, rounds, note, icon }: EventCardProps) {
+export function EventCard({ title, description, games, features, rounds, note, icon, imageUrl, link }: EventCardProps) {
   const icons = {
     gamepad: <Gamepad2 className="h-6 w-6" />,
     code: <Code className="h-6 w-6" />,
@@ -30,8 +33,8 @@ export function EventCard({ title, description, games, features, rounds, note, i
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="absolute right-0 top-0 h-16 w-16 translate-x-4 -translate-y-4 transform rounded-full bg-gradient-to-br from-pink-500/10 to-purple-500/10 opacity-70 transition-transform group-hover:translate-x-2 group-hover:-translate-y-2"></div>
-      <div className="absolute right-0 top-0 h-20 w-20 translate-x-8 -translate-y-8 transform rounded-full bg-gradient-to-br from-pink-500/10 to-purple-500/10 opacity-50 transition-transform group-hover:translate-x-6 group-hover:-translate-y-6"></div>
+      <div className="absolute right-0 top-0 h-100 w-16 translate-x-4 -translate-y-4 transform rounded-full bg-gradient-to-br from-pink-500/10 to-purple-500/10 opacity-70 transition-transform group-hover:translate-x-2 group-hover:-translate-y-2"></div>
+      <div className="absolute right-0 top-0 h-100 w-20 translate-x-8 -translate-y-8 transform rounded-full bg-gradient-to-br from-pink-500/10 to-purple-500/10 opacity-50 transition-transform group-hover:translate-x-6 group-hover:-translate-y-6"></div>
 
       <div className="mb-4 flex items-center gap-2">
         <div className="rounded-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-2 text-pink-500">
@@ -41,6 +44,16 @@ export function EventCard({ title, description, games, features, rounds, note, i
       </div>
 
       <p className="mb-4 text-gray-300">{description}</p>
+
+      <div className="mb-4 relative w-full h-64 overflow-hidden rounded-lg">
+        <Image
+          src={imageUrl || "/placeholder.svg"}
+          alt={title}
+          fill
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+      </div>
 
       {games && (
         <div className="space-y-2">
@@ -89,7 +102,26 @@ export function EventCard({ title, description, games, features, rounds, note, i
           <strong className="text-white">Note:</strong> {note}
         </div>
       )}
+
+<div className="mt-6">
+  {link ? (
+    <a
+      href={link}
+      target="_blank" // ✅ Opens in a new tab
+      rel="noopener noreferrer" // ✅ Security best practice
+      className="block w-full"
+    >
+      <Button className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-600 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-400">
+        Register Now
+      </Button>
+    </a>
+  ) : (
+    <Button className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-600 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-400">
+      Register Now
+    </Button>
+  )}
+</div>
+
     </motion.div>
   )
 }
-
