@@ -146,80 +146,79 @@ export default function Home() {
         </section>
 
         {/* Events Section */}
-        <section id="events" className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
-          <div className="container px-4 md:px-6 relative z-10">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                  Tech & Gaming Events
-                </h2>
-                <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed">
-                  Compete in a variety of exciting tech and gaming challenges
-                  designed to test your skills
-                </p>
-              </div>
-            </div>
+<section id="events" className="py-20 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
+  <div className="container px-4 md:px-6 relative z-10">
+    <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="space-y-2">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          Tech & Gaming Events
+        </h2>
+        <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed">
+          Compete in a variety of exciting tech and gaming challenges
+          designed to test your skills
+        </p>
+      </div>
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              <EventCard
-                title="SovaStrike – The Gaming Showdown"
-                description="Compete in tactical FPS battles, high-paced 1v1 combat, battle royale survival, strategic cricket simulation, and fun math-based challenges."
-                games={[
-                  "Valorant",
-                  "Tekken",
-                  "BGMI",
-                  "Cricket Champions",
-                  "Calculus",
-                ]}
-                icon="gamepad"
-                imageUrl="/ss.png?height=400&width=600"
-                link="/events/zero-bug-challenge"
-              />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <EventCard
+        title="SovaStrike – The Gaming Showdown"
+        description="Compete in tactical FPS battles, high-paced 1v1 combat, battle royale survival, strategic cricket simulation, and fun math-based challenges."
+        games={["Valorant", "Tekken", "BGMI", "Cricket Champions", "Calculus"]}
+        icon="gamepad"
+        imageUrl="/ss.png?height=400&width=600"
+        buttons={[
+          { text: "Register BGMI", link: "https://docs.google.com/forms/d/e/1FAIpQLScG6JlxAdCZmxb8ZrcJN-IIj834JXL_PBpKu6Uj6HAo5i2vGQ/viewform" },
+          { text: "Register Valorant", link: "https://docs.google.com/forms/d/e/1FAIpQLSeXEu1Qwv_i5AdRO_vMcVrvokixEky1hvkRBuiRha67Orfg0w/viewform" },
+          { text: "Register Tekken", link: "https://docs.google.com/forms/d/e/1FAIpQLSdBoRheZhg3QzH9NYQ4zb_b4W61G6kehPdAf0xv-fMBzVAufQ/viewform" },
+        ]}
+      />
 
-              <EventCard
-                title="Innov8 Sprint – The Coding Marathon"
-                description="Problem statements provided OR open innovation allowed. Jury includes founding and ex-core team members."
-                features={[
-                  "Cash prizes, internships, and mentorship opportunities for top performers.",
+      <EventCard
+        title="Innov8 Sprint – The Coding Marathon"
+        description="Problem statements provided OR open innovation allowed. Jury includes founding and ex-core team members."
+        features={[
+          "Cash prizes, internships, and mentorship opportunities for top performers.",
+          "Expert jury panel with founding & ex-core team members providing feedback.",
+          "Real-world impact: Build solutions that matter in industry & society.",
+        ]}
+        icon="code"
+        imageUrl="/in8.png?height=400&width=600"
+        buttons={[{ text: "Register Now", link: "https://docs.google.com/forms/d/e/1FAIpQLSeVGBv5SyZVYEb0pLN89O3qveOFmAHS-cJnHVvrwCWavUaRrQ/viewform" }]}
+      />
 
-                  "Expert jury panel with founding & ex-core team members providing feedback.",
-                  "Real-world impact: Build solutions that matter in industry & society.",
-                ]}
-                icon="code"
-                imageUrl="/in8.png?height=400&width=600"
-                link="https://docs.google.com/forms/d/e/1FAIpQLSeVGBv5SyZVYEb0pLN89O3qveOFmAHS-cJnHVvrwCWavUaRrQ/viewform"
-              />
+      <EventCard
+        title="Zero-Bug Challenge – Debugging Face-Off"
+        description="1v1 battle across 3 rounds of debugging challenges. Last person standing wins!"
+        rounds={[
+          "Basic Debugging – Identify and fix syntax & logical errors.",
+          "Intermediate Code Fixes – Resolve performance bottlenecks & edge cases.",
+          "Advanced Problem-Solving – Debug complex algorithms under time pressure!",
+        ]}
+        icon="bug"
+        imageUrl="/zb.png?height=400&width=600"
+        buttons={[{ text: "Register Now", link: "https://docs.google.com/forms/d/e/1FAIpQLSdJ89FGV3JxtIBZphGz02ydH7Re4h-JdJ70LJAqIg0LNCV_QA/viewform" }]}
+      />
 
-              <EventCard
-                title="Zero-Bug Challenge – Debugging Face-Off"
-                description="1v1 battle across 3 rounds of debugging challenges. Last person standing wins!"
-                rounds={[
-                  "Basic Debugging – Identify and fix syntax & logical errors.",
-                  "Intermediate Code Fixes – Resolve performance bottlenecks & edge cases.",
-                  "Advanced Problem-Solving – Debug complex algorithms under time pressure!",
-                ]}
-                icon="bug"
-                imageUrl="/zb.png?height=400&width=600"
-                link="https://docs.google.com/forms/d/e/1FAIpQLSdJ89FGV3JxtIBZphGz02ydH7Re4h-JdJ70LJAqIg0LNCV_QA/viewform"
-              />
+      <EventCard
+        title="Capture the Flag (CTF) – Cybersecurity Challenge"
+        description="Solve security challenges & exploit vulnerabilities. Real-world hacking simulations & cryptographic puzzles."
+        features={[
+          "Win prizes as the best ethical hackers!",
+          "Compete in web, forensic, cryptography, and reverse engineering challenges.",
+          "Real-world penetration testing and cybersecurity simulations.",
+          "CTF-style problem statements curated by security experts.",
+        ]}
+        icon="shield"
+        imageUrl="/ctf.png"
+        buttons={[{ text: "Register Now", link: "https://docs.google.com/forms/d/e/1FAIpQLSfJT_64QQCoZgeXRyQjHiCXTabXNRCNJVDobwctfra59ybyPg/viewform" }]}
+      />
+    </div>
+  </div>
+</section>
 
-              <EventCard
-                title="Capture the Flag (CTF) – Cybersecurity Challenge"
-                description="Solve security challenges & exploit vulnerabilities. Real-world hacking simulations & cryptographic puzzles."
-                features={[
-                  "Win prizes as the best ethical hackers!",
-                  "Compete in web, forensic, cryptography, and reverse engineering challenges.",
-                  "Real-world penetration testing and cybersecurity simulations.",
-                  "CTF-style problem statements curated by security experts.",
-                ]}
-                icon="shield"
-                imageUrl="/ctf.png"
-                link="https://docs.google.com/forms/d/e/1FAIpQLSfJT_64QQCoZgeXRyQjHiCXTabXNRCNJVDobwctfra59ybyPg/viewform"
-              />
-            </div>
-          </div>
-        </section>
+
 
         {/* Prizes Section */}
         <section id="prizes" className="py-20 relative overflow-hidden">
