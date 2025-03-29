@@ -329,6 +329,10 @@ export default function Home() {
                 answer="Gamers, developers, and tech enthusiasts globally."
               />
               <FaqItem
+                question="Bring your own device? (BYOD)"
+                answer="Yes, You have to bring your own device"
+              />
+              <FaqItem
                 question="Is it free?"
                 answer="No, Varies from game/event"
               />
