@@ -1,39 +1,46 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { ChevronRight, Calendar, Clock, MapPin, Users, ArrowRight } from "lucide-react"
-import { HeroSection } from "@/components/hero-section"
-import { EventCard } from "@/components/event-card"
-import { PrizeCard } from "@/components/prize-card"
-import { ScheduleItem } from "@/components/schedule-item"
-import { FaqItem } from "@/components/faq-item"
-import { ContactCard } from "@/components/contact-card"
-import { CountdownTimer } from "@/components/countdown-timer"
-import { Navbar } from "@/components/navbar"
-import { AnimatedBackground } from "@/components/animated-background"
-import { BackToTop } from "@/components/back-to-top"
+import { useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ChevronRight,
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  ArrowRight,
+} from "lucide-react";
+import { HeroSection } from "@/components/hero-section";
+import { EventCard } from "@/components/event-card";
+import { PrizeCard } from "@/components/prize-card";
+import { ScheduleItem } from "@/components/schedule-item";
+import { FaqItem } from "@/components/faq-item";
+import { ContactCard } from "@/components/contact-card";
+import { CountdownTimer } from "@/components/countdown-timer";
+import { Navbar } from "@/components/navbar";
+import { AnimatedBackground } from "@/components/animated-background";
+import { BackToTop } from "@/components/back-to-top";
 
 export default function Home() {
   // Initialize smooth scrolling
   useEffect(() => {
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault()
-        const href = this.getAttribute("href")
+      anchor.addEventListener("click",  (e) => {
+        e.preventDefault();
+        const href = e.currentTarget.getAttribute("href");
         if (href) {
-          const targetElement = document.querySelector(href)
+          const targetElement = document.querySelector(href);
           if (targetElement) {
             targetElement.scrollIntoView({
               behavior: "smooth",
-            })
+            });
           }
         }
-      })
-    })
-  }, [])
+      });
+    });
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white relative">
@@ -61,34 +68,44 @@ export default function Home() {
                   About Code Odyssey
                 </h2>
                 <p className="text-gray-300 md:text-xl">
-                  "Code Odyssey 2025" is a high-energy gaming and tech event where gamers, developers, and cybersecurity
-                  enthusiasts compete in a series of intense challenges! Engage in gaming tournaments, coding marathons,
-                  debugging battles, and cybersecurity face-offs to win exciting prizes!
+                  "Code Odyssey 2025" is a high-energy gaming and tech event
+                  where gamers, developers, and cybersecurity enthusiasts
+                  compete in a series of intense challenges! Engage in gaming
+                  tournaments, coding marathons, debugging battles, and
+                  cybersecurity face-offs to win exciting prizes!
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                   <div className="flex flex-col gap-2 p-4 rounded-lg border border-pink-500/20 bg-black/50 backdrop-blur-sm hover:border-pink-500/50 transition-all duration-300">
                     <div className="rounded-full w-10 h-10 flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-500/20">
                       <ChevronRight className="h-5 w-5 text-pink-500" />
                     </div>
-                    <h3 className="font-medium text-white">Compete in thrilling gaming battles</h3>
+                    <h3 className="font-medium text-white">
+                      Compete in thrilling gaming battles
+                    </h3>
                   </div>
                   <div className="flex flex-col gap-2 p-4 rounded-lg border border-pink-500/20 bg-black/50 backdrop-blur-sm hover:border-pink-500/50 transition-all duration-300">
                     <div className="rounded-full w-10 h-10 flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-500/20">
                       <ChevronRight className="h-5 w-5 text-pink-500" />
                     </div>
-                    <h3 className="font-medium text-white">Code and debug your way to victory</h3>
+                    <h3 className="font-medium text-white">
+                      Code and debug your way to victory
+                    </h3>
                   </div>
                   <div className="flex flex-col gap-2 p-4 rounded-lg border border-pink-500/20 bg-black/50 backdrop-blur-sm hover:border-pink-500/50 transition-all duration-300">
                     <div className="rounded-full w-10 h-10 flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-500/20">
                       <ChevronRight className="h-5 w-5 text-pink-500" />
                     </div>
-                    <h3 className="font-medium text-white">Win exciting prizes & recognition</h3>
+                    <h3 className="font-medium text-white">
+                      Win exciting prizes & recognition
+                    </h3>
                   </div>
                   <div className="flex flex-col gap-2 p-4 rounded-lg border border-pink-500/20 bg-black/50 backdrop-blur-sm hover:border-pink-500/50 transition-all duration-300">
                     <div className="rounded-full w-10 h-10 flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-purple-500/20">
                       <ChevronRight className="h-5 w-5 text-pink-500" />
                     </div>
-                    <h3 className="font-medium text-white">Network with top developers & gamers</h3>
+                    <h3 className="font-medium text-white">
+                      Network with top developers & gamers
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -138,7 +155,8 @@ export default function Home() {
                   Tech & Gaming Events
                 </h2>
                 <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed">
-                  Compete in a variety of exciting tech and gaming challenges designed to test your skills
+                  Compete in a variety of exciting tech and gaming challenges
+                  designed to test your skills
                 </p>
               </div>
             </div>
@@ -147,30 +165,57 @@ export default function Home() {
               <EventCard
                 title="SovaStrike – The Gaming Showdown"
                 description="Compete in tactical FPS battles, high-paced 1v1 combat, battle royale survival, strategic cricket simulation, and fun math-based challenges."
-                games={["Valorant", "Tekken", "BGMI", "Cricket Champions", "Calculus"]}
+                games={[
+                  "Valorant",
+                  "Tekken",
+                  "BGMI",
+                  "Cricket Champions",
+                  "Calculus",
+                ]}
                 icon="gamepad"
+                imageUrl="/ss.png?height=400&width=600"
+                link="/events/zero-bug-challenge"
               />
 
               <EventCard
                 title="Innov8 Sprint – The Coding Marathon"
                 description="Problem statements provided OR open innovation allowed. Jury includes founding and ex-core team members."
-                features={["Dev Lead (Bhavish) & App Lead (Anileshwar) leading problem curation."]}
+                features={[
+                  "Cash prizes, internships, and mentorship opportunities for top performers.",
+
+                  "Expert jury panel with founding & ex-core team members providing feedback.",
+                  "Real-world impact: Build solutions that matter in industry & society.",
+                ]}
                 icon="code"
+                imageUrl="/in8.png?height=400&width=600"
+                link="https://docs.google.com/forms/d/e/1FAIpQLScG6JlxAdCZmxb8ZrcJN-IIj834JXL_PBpKu6Uj6HAo5i2vGQ/viewform"
               />
 
               <EventCard
                 title="Zero-Bug Challenge – Debugging Face-Off"
                 description="1v1 battle across 3 rounds of debugging challenges. Last person standing wins!"
-                rounds={["Basic debugging", "Intermediate code fixes", "Advanced problem-solving"]}
-                note="Question preparation by CP Leads (Sai Sruti & Karthik Reddy)."
+                rounds={[
+                  "Basic Debugging – Identify and fix syntax & logical errors.",
+                  "Intermediate Code Fixes – Resolve performance bottlenecks & edge cases.",
+                  "Advanced Problem-Solving – Debug complex algorithms under time pressure!",
+                ]}
                 icon="bug"
+                imageUrl="/zb.png?height=400&width=600"
+                link="/events/zero-bug-challenge"
               />
 
               <EventCard
                 title="Capture the Flag (CTF) – Cybersecurity Challenge"
                 description="Solve security challenges & exploit vulnerabilities. Real-world hacking simulations & cryptographic puzzles."
-                features={["Win prizes as the best ethical hackers!"]}
+                features={[
+                  "Win prizes as the best ethical hackers!",
+                  "Compete in web, forensic, cryptography, and reverse engineering challenges.",
+                  "Real-world penetration testing and cybersecurity simulations.",
+                  "CTF-style problem statements curated by security experts.",
+                ]}
                 icon="shield"
+                imageUrl="/ctf.png"
+                link="https://docs.google.com/forms/d/e/1FAIpQLSfJT_64QQCoZgeXRyQjHiCXTabXNRCNJVDobwctfra59ybyPg/viewform"
               />
             </div>
           </div>
@@ -205,26 +250,34 @@ export default function Home() {
               />
 
               <PrizeCard
-                title="Internship Opportunities"
-                description="Exclusive internship & networking opportunities for standout participants"
+                title="Networking Excellence"
+                description="Unlock career-boosting connections and mentorship opportunities."
                 icon="briefcase"
               />
             </div>
 
             <div className="mt-12 p-6 bg-black/50 backdrop-blur-sm rounded-lg border border-pink-500/20">
-              <h3 className="text-xl font-bold mb-4 text-white">Additional Perks</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">
+                Additional Perks
+              </h3>
               <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <li className="flex items-center gap-2">
                   <ArrowRight className="h-5 w-5 text-pink-500" />
-                  <span className="text-gray-300">Exclusive Swag & Goodies</span>
+                  <span className="text-gray-300">
+                    Exclusive Swag & Goodies
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <ArrowRight className="h-5 w-5 text-pink-500" />
-                  <span className="text-gray-300">Hands-on mentorship from industry experts</span>
+                  <span className="text-gray-300">
+                    Hands-on mentorship from industry experts
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <ArrowRight className="h-5 w-5 text-pink-500" />
-                  <span className="text-gray-300">Career opportunities for top performers</span>
+                  <span className="text-gray-300">
+                    Career opportunities for top performers
+                  </span>
                 </li>
               </ul>
             </div>
@@ -247,13 +300,11 @@ export default function Home() {
             </div>
 
             <div className="mt-12 space-y-4">
-              <ScheduleItem time="10:00 AM" event="Opening Ceremony" />
-              <ScheduleItem time="10:30 AM" event="Gaming & Coding Begins" />
-              <ScheduleItem time="3:00 PM" event="Zero-Bug Challenge Round 1" />
-              <ScheduleItem time="5:00 PM" event="Capture the Flag Challenge" />
-              <ScheduleItem time="7:00 PM" event="Fun Break & Networking" />
-              <ScheduleItem time="10:00 PM" event="Final Showdowns & Submissions" />
-              <ScheduleItem time="12:00 AM" event="Winners Announcement" />
+              <ScheduleItem
+                time="9:30 AM - 10:30 AM"
+                event="Opening Ceremony"
+              />
+              <ScheduleItem time="10:30 AM" event="Event Begins" />
             </div>
           </div>
         </section>
@@ -274,14 +325,26 @@ export default function Home() {
             </div>
 
             <div className="mt-12 space-y-4 max-w-3xl mx-auto">
-              <FaqItem question="Who can participate?" answer="Gamers, developers, and tech enthusiasts globally." />
-              <FaqItem question="Is it free?" answer="Yes, participation is 100% free!" />
-              <FaqItem question="Can I join solo?" answer="Yes, teams and solo participants are allowed." />
+              <FaqItem
+                question="Who can participate?"
+                answer="Gamers, developers, and tech enthusiasts globally."
+              />
+              <FaqItem
+                question="Is it free?"
+                answer="No, Varies from game/event"
+              />
+              <FaqItem
+                question="Can I join solo?"
+                answer="Yes, teams and solo participants are allowed."
+              />
               <FaqItem
                 question="What games and coding languages are supported?"
                 answer="Any! Valorant, BGMI, Web3, Python, JS, etc."
               />
-              <FaqItem question="Where will it be hosted?" answer="D-Block, Auditorium & Online Streaming." />
+              <FaqItem
+                question="Where will it be hosted?"
+                answer="D-Block, Auditorium & Online Streaming."
+              />
             </div>
           </div>
         </section>
@@ -302,9 +365,21 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-              <ContactCard title="Email" contact="codeodyssey@codeoholics.com" icon="mail" />
-              <ContactCard title="Website" contact="codeoholics-ten.vercel.app" icon="globe" />
-              <ContactCard title="Phone" contact="7989842906, 9618136194, 8106828650" icon="phone" />
+              <ContactCard
+                title="Email"
+                contact="codeoholics@cmrtc.ac.in"
+                icon="mail"
+              />
+              <ContactCard
+                title="Website"
+                contact="codeoholics-ten.vercel.app"
+                icon="globe"
+              />
+              <ContactCard
+                title="Phone"
+                contact="7989842906 (Chetan Sirigiri), 9618136194 (Nikhil), 8106828650 (Arnav)"
+                icon="phone"
+              />
             </div>
           </div>
         </section>
@@ -316,13 +391,22 @@ export default function Home() {
             © 2025 Code Odyssey. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-sm font-medium text-gray-400 hover:text-white">
+            <Link
+              href="#"
+              className="text-sm font-medium text-gray-400 hover:text-white"
+            >
               Terms
             </Link>
-            <Link href="#" className="text-sm font-medium text-gray-400 hover:text-white">
+            <Link
+              href="#"
+              className="text-sm font-medium text-gray-400 hover:text-white"
+            >
               Privacy
             </Link>
-            <Link href="#" className="text-sm font-medium text-gray-400 hover:text-white">
+            <Link
+              href="#"
+              className="text-sm font-medium text-gray-400 hover:text-white"
+            >
               Contact
             </Link>
           </div>
@@ -330,6 +414,5 @@ export default function Home() {
       </footer>
       <BackToTop />
     </div>
-  )
+  );
 }
-
