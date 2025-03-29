@@ -303,10 +303,11 @@ export default function Home() {
 
             <div className="mt-12 space-y-4">
               <ScheduleItem
-                time="9:30 AM - 10:30 AM"
+                time="09:30 AM - 10:30 AM"
                 event="Opening Ceremony"
               />
               <ScheduleItem time="10:30 AM" event="Event Begins" />
+              <ScheduleItem time="04:00 AM" event="Event Ends" />
             </div>
           </div>
         </section>
