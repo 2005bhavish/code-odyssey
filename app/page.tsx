@@ -187,7 +187,7 @@ export default function Home() {
           "Real-world impact: Build solutions that matter in industry & society.",
         ]}
         icon="code"
-        imageUrl="/in8.png?height=400&width=600"
+        imageUrl="/in82.png?height=400&width=600"
         buttons={[{ text: "Register Now", link: "https://docs.google.com/forms/d/e/1FAIpQLSeVGBv5SyZVYEb0pLN89O3qveOFmAHS-cJnHVvrwCWavUaRrQ/viewform" }]}
       />
 
