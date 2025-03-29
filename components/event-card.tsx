@@ -1,28 +1,38 @@
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Gamepad2, Code, Bug, Shield, ChevronRight } from "lucide-react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Gamepad2, Code, Bug, Shield, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 interface EventCardProps {
-  title: string
-  description: string
-  games?: string[]
-  features?: string[]
-  rounds?: string[]
-  note?: string
-  icon: "gamepad" | "code" | "bug" | "shield"
-  imageUrl: string
-  link?: string // Add the link prop
+  title: string;
+  description: string;
+  games?: string[];
+  features?: string[];
+  rounds?: string[];
+  note?: string;
+  icon: "gamepad" | "code" | "bug" | "shield";
+  imageUrl: string;
+  buttons?: { text: string; link?: string }[]; // ✅ Allow multiple buttons
 }
 
-export function EventCard({ title, description, games, features, rounds, note, icon, imageUrl, link }: EventCardProps) {
+export function EventCard({
+  title,
+  description,
+  games,
+  features,
+  rounds,
+  note,
+  icon,
+  imageUrl,
+  buttons,
+}: EventCardProps) {
   const icons = {
     gamepad: <Gamepad2 className="h-6 w-6" />,
     code: <Code className="h-6 w-6" />,
     bug: <Bug className="h-6 w-6" />,
     shield: <Shield className="h-6 w-6" />,
-  }
+  };
 
   return (
     <motion.div
@@ -103,25 +113,31 @@ export function EventCard({ title, description, games, features, rounds, note, i
         </div>
       )}
 
-<div className="mt-6">
-  {link ? (
-    <a
-      href={link}
-      target="_blank" // ✅ Opens in a new tab
-      rel="noopener noreferrer" // ✅ Security best practice
-      className="block w-full"
-    >
-      <Button className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-600 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-400">
-        Register Now
-      </Button>
-    </a>
-  ) : (
-    <Button className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-600 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-400">
-      Register Now
-    </Button>
-  )}
-</div>
-
+      {/* ✅ Multiple Buttons Section */}
+      <div className="mt-6 flex flex-col gap-3">
+        {buttons?.map((button, index) => (
+          button.link ? (
+            <a
+              key={index}
+              href={button.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              <Button className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-600 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-400">
+                {button.text}
+              </Button>
+            </a>
+          ) : (
+            <Button
+              key={index}
+              className="w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-blue-600 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-400"
+            >
+              {button.text}
+            </Button>
+          )
+        ))}
+      </div>
     </motion.div>
-  )
+  );
 }
