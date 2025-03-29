@@ -165,7 +165,7 @@ export default function Home() {
       <EventCard
         title="SovaStrike – The Gaming Showdown"
         description="Compete in tactical FPS battles, high-paced 1v1 combat, battle royale survival, strategic cricket simulation, and fun math-based challenges."
-        games={["Valorant", "Tekken", "BGMI", "Cricket Champions", "Calculus"]}
+        games={["Valorant", "Tekken", "BGMI"]}
         icon="gamepad"
         imageUrl="/ss.png?height=400&width=600"
         buttons={[
