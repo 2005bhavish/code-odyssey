@@ -188,7 +188,7 @@ export default function Home() {
                 ]}
                 icon="code"
                 imageUrl="/in8.png?height=400&width=600"
-                link=""
+                link="https://docs.google.com/forms/d/e/1FAIpQLSeVGBv5SyZVYEb0pLN89O3qveOFmAHS-cJnHVvrwCWavUaRrQ/viewform"
               />
 
               <EventCard
