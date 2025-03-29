@@ -16,8 +16,19 @@ export function ContactCard({ title, contact, icon }: ContactCardProps) {
     phone: <Phone className="h-6 w-6" />,
   }
 
+  // Define the link based on the icon type
+  const link =
+    icon === "mail"
+      ? `https://mail.google.com/mail/?view=cm&fs=1&to=${contact}`
+      : icon === "phone"
+      ? `tel:${contact}`
+      : contact; // Assuming "globe" is a URL
+
   return (
-    <motion.div
+    <motion.a
+      href={link}
+      target={icon === "mail" || icon === "globe" ? "_blank" : undefined} // Open Gmail and websites in a new tab
+      rel="noopener noreferrer"
       className="flex flex-col items-center rounded-lg border border-pink-500/20 bg-black/50 backdrop-blur-sm p-6 text-center hover:border-pink-500/50 hover:shadow-[0_0_15px_rgba(236,72,153,0.15)] transition-all duration-300"
       whileHover={{ y: -5 }}
       initial={{ opacity: 0, y: 20 }}
@@ -30,7 +41,7 @@ export function ContactCard({ title, contact, icon }: ContactCardProps) {
       </div>
       <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
       <p className="text-gray-300">{contact}</p>
-    </motion.div>
+    </motion.a>
   )
 }
 
