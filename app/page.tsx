@@ -13,6 +13,7 @@ import { ContactCard } from "@/components/contact-card"
 import { CountdownTimer } from "@/components/countdown-timer"
 import { Navbar } from "@/components/navbar"
 import { AnimatedBackground } from "@/components/animated-background"
+import { BackToTop } from "@/components/back-to-top"
 
 export default function Home() {
   // Initialize smooth scrolling
@@ -94,7 +95,7 @@ export default function Home() {
               <div className="relative h-[400px] w-full overflow-hidden rounded-xl border border-pink-500/20">
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 z-10"></div>
                 <Image
-                  src="/w.jpg?height=800&width=1200"
+                  src="/placeholder.svg?height=800&width=1200"
                   alt="Code Odyssey Event"
                   fill
                   className="object-cover"
@@ -327,6 +328,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   )
 }
