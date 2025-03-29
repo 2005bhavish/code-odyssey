@@ -403,7 +403,7 @@ export default function Home() {
               />
               <ContactCard
                 title="Website"
-                contact="https://code-odyssey-rho.vercel.app/"
+                contact="https://codeoholics-ten.vercel.app/"
                 icon="globe"
               />
               <ContactCard
