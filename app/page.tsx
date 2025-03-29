@@ -370,8 +370,8 @@ export default function Home() {
                 icon="mail"
               />
               <ContactCard
-                title="Website"
-                contact="https://code-odyssey-rho.vercel.app/"
+                title="Club Website"
+                contact="https://codeoholics-ten.vercel.app/"
                 icon="globe"
               />
               <ContactCard
