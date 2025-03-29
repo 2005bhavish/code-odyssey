@@ -174,7 +174,7 @@ export default function Home() {
                 ]}
                 icon="gamepad"
                 imageUrl="/ss.png?height=400&width=600"
-                link="https://docs.google.com/forms/d/e/1FAIpQLSdJ89FGV3JxtIBZphGz02ydH7Re4h-JdJ70LJAqIg0LNCV_QA/viewform"
+                link="/events/zero-bug-challenge"
               />
 
               <EventCard
