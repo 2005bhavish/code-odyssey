@@ -21,25 +21,20 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
+      setScrolled(window.scrollY > 50)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href) => {
     setIsOpen(false)
-
-    // Smooth scroll to the section
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+    setTimeout(() => {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    }, 300) // Delay to allow menu closing animation
   }
 
   return (
@@ -90,7 +85,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 border-b border-blue-900/30"
+            className="md:hidden bg-black/95 border-b border-blue-900/30 overflow-hidden"
           >
             <div className="container py-4 px-4 flex flex-col gap-4">
               {navItems.map((item, index) => (
@@ -98,6 +93,7 @@ export function Navbar() {
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link
@@ -115,6 +111,7 @@ export function Navbar() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
                 transition={{ delay: navItems.length * 0.1 }}
               >
                 <Button className="w-full mt-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-none">
@@ -128,4 +125,3 @@ export function Navbar() {
     </header>
   )
 }
-
