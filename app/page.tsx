@@ -160,6 +160,9 @@ export default function Home() {
         </p>
       </div>
     </div>
+    <div className="mt-8 px-6 py-4 bg-red-700 text-white text-center font-bold text-lg rounded-lg shadow-lg">
+      ⚠️ IMPORTANT: Participants MUST bring their own devices (Laptops, Controllers, etc.) for all events!
+    </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
       <EventCard
@@ -179,7 +182,7 @@ export default function Home() {
         title="Innov8 Sprint – The Coding Marathon"
         description="Problem statements provided OR open innovation allowed. Jury includes founding and ex-core team members."
         features={[
-          "Cash prizes, internships, and mentorship opportunities for top performers.",
+          "Cash prizes, and mentorship opportunities for top performers.",
           "Expert jury panel with founding & ex-core team members providing feedback.",
           "Real-world impact: Build solutions that matter in industry & society.",
         ]}
