@@ -95,7 +95,7 @@ export default function Home() {
               <div className="relative h-[400px] w-full overflow-hidden rounded-xl border border-pink-500/20">
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 z-10"></div>
                 <Image
-                  src="/placeholder.svg?height=800&width=1200"
+                  src="/w.jpg?height=800&width=1200"
                   alt="Code Odyssey Event"
                   fill
                   className="object-cover"
