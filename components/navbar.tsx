@@ -27,7 +27,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (href: string) => {
     setIsOpen(false)
     setTimeout(() => {
       const element = document.querySelector(href)
@@ -67,9 +67,11 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Button className="hidden md:inline-flex bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-none">
-          Register Now
-        </Button>
+        <a href="https://linktr.ee/CodeoholicsCommunity" target="_blank" rel="noopener noreferrer">
+          <Button className="hidden md:inline-flex bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-none">
+            Register Now
+          </Button>
+        </a>
 
         {/* Mobile Menu Button */}
         <button className="md:hidden text-white p-2" onClick={() => setIsOpen(!isOpen)}>
@@ -114,9 +116,11 @@ export function Navbar() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ delay: navItems.length * 0.1 }}
               >
-                <Button className="w-full mt-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-none">
-                  Register Now
-                </Button>
+                <a href="https://linktr.ee/CodeoholicsCommunity" target="_blank" rel="noopener noreferrer">
+          <Button className="hidden md:inline-flex bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-none">
+            Register Now
+          </Button>
+        </a>
               </motion.div>
             </div>
           </motion.div>
