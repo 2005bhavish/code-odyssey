@@ -173,8 +173,6 @@ export default function Home() {
                   "Valorant",
                   "Tekken",
                   "BGMI",
-                  "Cricket Champions",
-                  "Calculus",
                 ]}
                 icon="gamepad"
                 imageUrl="/ss.png?height=400&width=600"
