@@ -198,7 +198,7 @@ export default function Home() {
                 title="🚀 Welcome to Innov8 Sprint – A 6-Hour Innovation Challenge! 🚀"
                 description="Think fast, build faster! Innov8 Sprint is a high-energy project-building competition where creativity meets execution in just 6 hours. Whether you're a developer, designer, or problem-solver, this is your chance to collaborate, innovate, and showcase your skills under pressure."
                 features={[
-                  "Cash prizes, internships, and mentorship opportunities for top performers.",
+                  "Cash prizes, and mentorship opportunities for top performers.",
                   "Expert jury panel with founding & ex-core team members providing feedback.",
                   "Real-world impact: Build solutions that matter in industry & society.",
                 ]}
