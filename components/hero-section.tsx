@@ -99,7 +99,7 @@ export function HeroSection() {
               <div className="text-sm text-gray-400">Non-Stop Action</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-white">₹20K+</div>
+              <div className="text-3xl font-bold text-white">₹1.5L</div>
               <div className="text-sm text-gray-400">Prize Pool</div>
             </div>
             <div className="flex flex-col items-center">
