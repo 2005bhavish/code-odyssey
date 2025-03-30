@@ -5,7 +5,9 @@ export const metadata: Metadata = {
   title: 'Code Odessey',
   description: 'Made Up',
   generator: 'v0.dev',
+  icons: '/favicon.ico',
 }
+
 
 export default function RootLayout({
   children,
