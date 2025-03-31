@@ -173,6 +173,7 @@ export default function Home() {
                   "Valorant",
                   "Tekken",
                   "BGMI",
+                  "Free Fire",
                 ]}
                 icon="gamepad"
                 imageUrl="/ss.png?height=400&width=600"
@@ -188,6 +189,10 @@ export default function Home() {
                   {
                     text: "Register Tekken",
                     link: "https://docs.google.com/forms/d/e/1FAIpQLSdBoRheZhg3QzH9NYQ4zb_b4W61G6kehPdAf0xv-fMBzVAufQ/viewform",
+                  },
+                  {
+                    text: "Register Free Fire",
+                    link: "https://docs.google.com/forms/d/e/1FAIpQLSfotfKe8dW6gQ05FD7wqA_Tb-esfUnhOW-o1KhkStwkBNNWgw/viewform",
                   },
                 ]}
               />
